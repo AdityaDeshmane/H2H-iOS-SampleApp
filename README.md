@@ -43,46 +43,10 @@
   From Project File -> General -> Linked Frameworks and Libraries: (General tab)
   Make sure files frome 1 and 2 are present here
 
-Step 3.
-
-  Project File -> Build Phases -> Copy Bundle Resources -> + (if not present) -> H2HBundle.bundle
-
-Step 4.
-
-  Project File -> Build Settings -> Build Options -> Enable Bitcode -> NO
-
-Step 5.
-
-  Create Podfile and add following statements:
-  platform :ios, ‘7.1’
-
-  target ‘<Target Name>’ do
-  pod 'KissXML'
-  pod 'CocoaAsyncSocket'
-  pod 'CocoaLumberjack’, ‘2.2.0’
-  end
 
 
-  and perform pod install.
-  (for more information on how to install pods, refer: https://cocoapods.org/)
-  close project file and open workspace created by pods.
 
-Step 6.
 
-  Unzip and copy XMPPFramework (provided in FrameworksAndResources folder) in your project folder.
-  Add it in frameworks folder in your project. ( select Frameworks -> Add files to <Project Name> -> select XMPPFramework we just copied )
-
-Step 7.
-
-  Add Project file -> Build Phases -> Link Binary with Libraries -> + -> libresolv.tbd
-
-Step 8.
-
-  In H2HSDK.framework -> Headers -> H2HSDK.h: add line #import “H2HSDKExt.h” (if not already present)
-
-Step 9.
-
-  Clean and Build your project.
 
 
 
