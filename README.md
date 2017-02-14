@@ -35,19 +35,13 @@
   CocoaLumberjack.framework
   XMPPFramework.framework
 
-3. For frameworks and bundle
+3. For frameworks and bundle make sure entries are present at two places 
 
-  From Project File -> General -> Embedded Binaries -> + -> Add Other (select these files: H2HBundle.bundle, TutorWebTC.framework, H2HSDK.framework from the project directory.) -> Select: copy items if needed -> Finish.
-  Make sure these files are added under:
+  From Project File -> General -> Embedded Binaries 
+  Make sure files frome 1 and 2 are present here
 
-  Embedded Binaries: (General tab)
-  H2HBundle.bundle,
-  TutorWebTC.framework,
-  H2HSDK.framework.
-
-  and Linked Frameworks and Libraries: (General tab)
-  TutorWebTC.framework
-  H2HSDK.framework.
+  From Project File -> General -> Linked Frameworks and Libraries: (General tab)
+  Make sure files frome 1 and 2 are present here
 
 Step 3.
 
