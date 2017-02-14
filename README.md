@@ -15,7 +15,7 @@
 1. Open workspace H2HSDKIntegrationSample.xcworkspace
 2. On launch, Xcode asks for migration of code, select Later.
 3. Set bundle ID and App signing 
-4. Set server URL in "AppDelegate.swift"
+4. Set server URL in "AppDelegate.swift" ```let H2HServerURL = "https://sandbox.liveh2h.com/tutormeetweb/" ```
 5. Run Application
 6. This should run application without any error
 
