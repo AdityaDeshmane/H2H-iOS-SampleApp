@@ -24,23 +24,25 @@
 
 1. Copy (drag drop) following frameworks and bundle from sample app's FrameworksAndResources folder to your project
 
-  H2HBundle.bundle
-  TutorWebTC.framework
-  H2HSDK.framework
+ * H2HBundle.bundle
+ * TutorWebTC.framework
+ * H2HSDK.framework
 
 2. Copy (drag drop) following third party framework from sample app to your project directory
 
-  Charts.framework
-  CocoaAsyncSocket.framework
-  CocoaLumberjack.framework
-  XMPPFramework.framework
+ * Charts.framework
+ * CocoaAsyncSocket.framework
+ * CocoaLumberjack.framework
+ * XMPPFramework.framework
 
 3. For frameworks and bundle make sure entries are present at two places 
 
   From Project File -> General -> Embedded Binaries 
+  
   Make sure files frome 1 and 2 are present here
 
-  From Project File -> General -> Linked Frameworks and Libraries: (General tab)
+  From Project File -> General -> Linked Frameworks and Libraries
+  
   Make sure files frome 1 and 2 are present here
 
 
