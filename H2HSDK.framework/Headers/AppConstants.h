@@ -85,7 +85,6 @@ extern NSString* const WS_CHAT_WRAPPER_BASE_URL;
 #define STID_PHONE_SWITCH_CHAT_VIEW_CONTROLLER       @"H2HPhoneSwitchChatViewController"
 #define STID_PHONE_MORE_OPTIONS_CONTROLLER @"H2HNewMoreOptionsNavigationController"
 #define STID_PHONE_VIDEOCONFERENCE_CONTROLLER   @"H2HVideoConferenceViewController"
-#define STID_PHONE_WHITEBOARD_CONTROLLER @"H2HPhoneWhiteBoardBaseViewController"
 #define STID_PHONE_TOOLBAR @"H2HPhoneToolbarViewController"
 
 #define STID_FABRICJS_WHITEBOARD_VC @"H2HFabricJSWhiteboardViewController"
@@ -305,6 +304,10 @@ extern NSString* const WS_CHAT_WRAPPER_BASE_URL;
 #define value_lock_UI                                       @"lockUI"
 #define value_recording                                     @"recording"
 #define value_invite_participant                            @"inviteParticipant"
+#define key_turn_on_video_allowed                           @"turnVideoOnAllowed"
+#define key_audio_only                                      @"audioOnly"
+#define key_allow_attendee_to_turn_on_audio_video           @"allowAttendeeToTurnOnAudioVideo"
+
 
 #pragma mark - Meeting Type
 #define MEETINGTYPE_STRING_GROUP        @"GROUP"
@@ -409,7 +412,7 @@ extern NSString* const WS_CHAT_WRAPPER_BASE_URL;
 #define kIsAutomaticallyHideToolbarKey @"kIsAutomaticallyHideToolbarKey"
 #define notification_user_setting_changed @"notification_user_setting_changed"
 #define notification_language_changed @"notification_language_changed"
-
+#define notification_transcript_setting_changed @"notification_transcript_setting_changed"
 
 // Enumerations
 #pragma mark -

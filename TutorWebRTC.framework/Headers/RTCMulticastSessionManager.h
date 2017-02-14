@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 #import "RTCSessionManager.h"
-#import "RTCRoom.h"
 #import "RTCTestConnectionData.h"
 
 
@@ -18,37 +17,6 @@
  *  Responsible for managing the entire life-cycle of a group WebRTC call.
  */
 @interface RTCMulticastSessionManager : RTCSessionManager
-
-/**
- *  The state of joining the multicast room.
- */
-@property (readonly, nonatomic) RTCMulticastRoomState multicastRoomState;
-
-/**
- *  State of the multicast WebRTC session.
- */
-@property (readonly, nonatomic) RTCMulticastState multicastState;
-
-/**
- *  The room which is currently joined by the localUser. If no room is joined this will be @p nil.
- */
-@property (readonly, strong) RTCRoom *room;
-
-/**
- *  The attendee user in the current broadcast or webinar session whose audio/video is active.If no attendeeUser arrived it will be @p nil.
- */
-@property (readwrite, strong) RTCUser *attendeeUser;
-/**
- *  The mediaDataForBroadcast is RTCMediaToggleData that is received from server for attendee for broadcast meeting type.
- */
-@property (readwrite, strong) RTCMediaToggleData *mediaDataForBroadcast;
-
-/**
- *  The mediaDataForWebinar is RTCMediaToggleData that is received from server for attendee for webinar meeting type.
- */
-@property (readwrite, strong) RTCMediaToggleData *mediaDataForWebinar;
-
-@property (nonatomic, copy) NSString* connectionCheckStr;
 
 /**
  *  Starts the process of joining a room with the specified room-name
@@ -209,5 +177,21 @@ withTranscriptLanguage:(NSString *)languageCode;
  */
 
 - (void) updatePermissionsforMediaData:(RTCMediaToggleData *)toggleData andIsChangesForLocalUser: (BOOL)isChangesForLocalUser;
+/**
+ *  Starts the process of joining a room with the specified room-name
+ *  and register with the specified user-name.
+ *
+ *  @param roomName The name of the room to join.
+ *  @param userName The user-name to use for registration.
+ *  @param role  The Role of the user whether he is host or participant.
+ *  @param reason  The reason for joining.
+ *  @param isSilent The flag that specifies if user is re joining.
+ */
+
+- (void)joinRoom: (NSString *)roomName
+    withUserName: (NSString *)userName
+         andRole: (NSString *)role
+       andReason: (NSString *)reason
+     andIsSilent: (BOOL) isSilent;
 
 @end

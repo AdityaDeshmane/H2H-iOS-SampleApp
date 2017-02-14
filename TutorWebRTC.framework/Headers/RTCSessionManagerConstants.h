@@ -172,6 +172,12 @@
 #define RTCNotificationGrantMediaAccess (@"NotifyUserToGrantMediaAccess")
 
 /**
+ *  This notification is posted to indicate that user should grant access for camera to move from audioOnly call to audio video call.
+ */
+
+#define RTCNotificationUpdateCameraAccessPermissions (@"NotifyUserToUpdateCameraAccessPermissions")
+
+/**
  *  This notification is posted to that we received raise hand event.
  */
 
@@ -309,6 +315,13 @@
  * This notification is posted when we receive join room fail.
  */
 #define RTCNotificationJoinRoomFail          (@"NotifyJoinRoomFail")
+
+
+/**
+ *  This notification is posted to that host has requested to enabled a/v of attendee user but attendee user has not granted permissions to share audio/video.
+ */
+
+#define RTCNotificationAttendeePermissionNotGranted (@"NotifyAttendeePermissionNotGranted")
 
 #pragma mark - Role constants
 /**

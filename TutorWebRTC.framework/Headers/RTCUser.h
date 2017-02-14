@@ -65,6 +65,19 @@
 
 @property (readwrite) BOOL isAttendee;
 
+//for group call if only audio permissions granted by user for device or when received from custom feature
+//(NOTE : The 'audioOnly' feature is only for GROUPCALL meeting type)
+@property (readwrite) BOOL isAudioOnly;
+
+/*
+ 
+ 'turnVideoOnAllowed' = true ; 	// host as well as attendee can turn on video.
+ 'turnVideoOnAllowed' = false ; 	// attendee cannot turn on his own video, only host can
+  default value = YES unless otherwise received from custom feature
+ 
+ */
+@property (readwrite) BOOL isTurnVideoOnAllowed;
+
 /**
  *  The flag is used to identify if peerconnection created is of send recv kind. Since when participant joins webinar meeting, that time peer creatd will be only recv kind for the particiapnt but when particiapnt becomes an attendee then the peer needs to be replaced with sendrecv peer now.
  */

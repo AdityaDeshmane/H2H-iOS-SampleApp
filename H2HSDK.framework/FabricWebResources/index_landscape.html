@@ -8,11 +8,11 @@
         <!-- Customize Style -->
         <style>
             
+            /*html and body tag style*/
             html, body
             {
-                /*1024 X 1320*/
-                width: 100%;/* (1024/2)+ 50Margin */ /* Use 100% to fit html to screen*/
-                height: 100%;/* close to device height and greater than (1320/2) */ /* Use 100% to fit html to screen*/
+                width: 100%;
+                height: 100%;
                 margin: 0px;
                 border: 0;/* Set border 10 for debugging */
                 border-style: solid;
@@ -21,16 +21,27 @@
                 /*display: block;   No floating content on sides */
             }
         
-            div#divForCanvasStyling
+        
+            /*Refer this for auto canvas centering http://jsfiddle.net/AdityaDeshmane/w8oqq5et/*/
+        
+            .outer
             {
+                display: table;
                 position: absolute;
-                margin: auto;
-                width: 512px;
-                height: 660px;
-                left:0;
-                right: 0;
-                top: 0;
-                bottom: 0;
+                height: 100%;
+                width: 100%;
+            }
+        
+            .middle
+            {
+                display: table-cell;
+                vertical-align: middle;
+            }
+        
+            .canvas-container   /*canvas's hidden DOM content div canvas-container styling*/
+            {
+                margin-left: auto;
+                margin-right: auto;
             }
         
         </style>
@@ -39,44 +50,66 @@
     
     <body style="background-color:#EDEDED;">
         
-        
-        
-        <!-- Canvas Size: 1024 X 1320 -->
-        
-        <div id="divForCanvasStyling">
-        <canvas id="canvas" width="512" height="660"></canvas>
+        <div class="outer">
+            <div class="middle">
+                <!-- Canvas -->
+                <canvas id="canvas"></canvas>
+            </div>
         </div>
-        
-        
         
         <!-- Script for auto adjusting canvas height & width as per frame of UIWebView -->
         <script>
-            /*
-            var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-            var height = (window.innerHeight > 0) ? window.innerHeight : screen.height;
-            var documentCanvas = document.getElementById("canvas");
             
-            documentCanvas.width = 1024;//1024
-            documentCanvas.height = 768;//768
-            */
+            /*Old 1024 X 1320*/
+            /*New 480w x 360h*/
+            var canvasDefaultWidth  = 480;
+            var canvasDefaultHeight = 360;
+            var heightMarginOffset  = 150;//Subtract top and bottom space from device height
+
+            //Get window dimensions
+            //NOTE : In lanscape mode screen width = height and vice a versa           
+            var height =  screen.width - heightMarginOffset;
+            var width =  screen.height;
+            
+            //old code reference
+            //var height = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+
+            //Use alert for debugging
             //alert("Canvas Width: "+width+"  Height: "+height);
+            
+            //Create canvas
             var canvas = new fabric.Canvas('canvas',{backgroundColor : "#fff"});
+            
+            //Canvas height should be less than webview height
+            var canvasHeightToOccupyFullWidth = (canvasDefaultHeight*width)/canvasDefaultWidth;
+            
+            if(canvasHeightToOccupyFullWidth > height)
+            {
+                canvas.setWidth((canvasDefaultWidth*height)/canvasDefaultHeight);
+                canvas.setHeight(height);
+            }
+            else
+            {
+                canvas.setWidth(width);
+                canvas.setHeight((canvasDefaultHeight*width)/canvasDefaultWidth);
+            }
+        
             canvas.renderAll();
             </script>
         
         
         
         <!-- Server side implementation maintains array for each object 'type' and used those index for reference,
-             But canvas has only one array which contains all objects.
-             This function provides index mapping from server side custom index to canvas's default index
+         But canvas has only one array which contains all objects.
+         This function provides index mapping from server side custom index to canvas's default index
          -->
         
         <script>
-
-
-        function getUpdatedIndex(objectType,receivedIndex)
+            
+            
+            function getUpdatedIndex(objectType,receivedIndex)
             {
-        
+                
                 var canvasObjects = canvas.getObjects();
                 var indexOfObject = 0;
                 var numberOfObjectOfReceivedType = -1;
@@ -95,31 +128,31 @@
                     
                     indexOfObject++;
                 }
+                
+                
+                return indexOfObject;
+            }
         
-     
-            return indexOfObject;
-        }
+            </script>
         
-        </script>
-
-
+        
         <!-- Get image dimension for setting scaling factor -->
         <script>
-    
-        function getImageDimensions(imageURL)
-        {
-            var image = new Image();
-            image.src = imageURL;
-        
-            image.onload = function()
+            
+            function getImageDimensions(imageURL)
             {
-                document.location = 'canvas://_BackgroundImage_Index_0_X_0_Y_0_Width_'+ encodeURIComponent(image.width) + '_Height_' + encodeURIComponent(image.height);
-            };
-        }
-
-        </script>
-
-
+                var image = new Image();
+                image.src = imageURL;
+                
+                image.onload = function()
+                {
+                    document.location = 'canvas://_BackgroundImage_Index_0_X_0_Y_0_Width_'+ encodeURIComponent(image.width) + '_Height_' + encodeURIComponent(image.height);
+                };
+            }
+        
+            </script>
+        
+        
         <!-- Script for listing to canvas event and passing it to iOS code via URL Scheme -->
         <script>
             

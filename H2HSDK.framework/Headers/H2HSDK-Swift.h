@@ -193,15 +193,6 @@ SWIFT_CLASS("_TtC6H2HSDK17H2HLoadingSubview")
 - (void)hide;
 @end
 
-
-SWIFT_CLASS("_TtC6H2HSDK19H2HMousePointerView")
-@interface H2HMousePointerView : UIView
-- (nonnull instancetype)initWithUserName:(NSString * _Nonnull)name OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-- (void)updateWithPoint:(CGPoint)newPoint name:(NSString * _Nonnull)newName;
-- (void)hideUserName;
-@end
-
 @class H2HChartOptionModel;
 @protocol PieChartToPollsManagerDelegate;
 
@@ -251,13 +242,6 @@ SWIFT_CLASS("_TtC6H2HSDK12H2HPollModel")
 - (void)handleCreatePoll:(id _Nonnull)data;
 @end
 
-
-SWIFT_CLASS("_TtC6H2HSDK14H2HRoundButton")
-@interface H2HRoundButton : UIButton
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-@property (nonatomic, getter=isHighlighted) BOOL highlighted;
-@end
-
 @class UserInfo;
 @class NSArray;
 @class NSDate;
@@ -283,61 +267,6 @@ SWIFT_CLASS("_TtC6H2HSDK27H2HVBPieChartViewController")
 @property (nonatomic, strong) id <PieChartToPollsManagerDelegate> _Nullable delegate;
 - (void)viewDidLoad;
 - (void)refreshChartWithData:(NSArray<H2HChartOptionModel *> * _Nullable)arrayChartModel;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-@class NSURLSession;
-@class NSURLAuthenticationChallenge;
-@class NSURLCredential;
-@class UITouch;
-@class UIEvent;
-
-SWIFT_CLASS("_TtC6H2HSDK27H2HWhiteBoardViewController")
-@interface H2HWhiteBoardViewController : UIViewController <NSURLSessionDelegate, UIAdaptivePresentationControllerDelegate, UIPopoverPresentationControllerDelegate>
-- (void)viewDidLoad;
-- (void)viewWillDisappear:(BOOL)animated;
-- (void)didReceiveMemoryWarning;
-- (void)viewDidLayoutSubviews;
-- (void)URLSession:(NSURLSession * _Nonnull)session didReceiveChallenge:(NSURLAuthenticationChallenge * _Nonnull)challenge completionHandler:(void (^ _Nonnull)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler;
-- (UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController * _Nonnull)controller;
-- (void)touchesBegan:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
-- (void)touchesMoved:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
-- (void)touchesEnded:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-SWIFT_CLASS("_TtC6H2HSDK31H2HWhiteboardHintViewController")
-@interface H2HWhiteboardHintViewController : UIViewController
-- (void)viewDidLoad;
-+ (void)showHint:(NSString * _Nonnull)text parentView:(UIView * _Nonnull)parentView frame:(CGRect)frame duration:(NSTimeInterval)duration;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-SWIFT_CLASS("_TtC6H2HSDK20H2HWhiteboardManager")
-@interface H2HWhiteboardManager : NSObject <NSURLSessionDelegate>
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-SWIFT_CLASS("_TtC6H2HSDK34H2HWhiteboardManagerViewController")
-@interface H2HWhiteboardManagerViewController : UIViewController <NSURLSessionDelegate, UIAdaptivePresentationControllerDelegate, UIPopoverPresentationControllerDelegate>
-- (void)viewDidLoad;
-- (UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController * _Nonnull)controller;
-- (void)didReceiveMemoryWarning;
-- (void)disconnect;
-- (void)touchesBegan:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
-- (void)touchesEnded:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
-- (void)touchesMoved:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
-- (void)URLSession:(NSURLSession * _Nonnull)session didReceiveChallenge:(NSURLAuthenticationChallenge * _Nonnull)challenge completionHandler:(void (^ _Nonnull)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler;
-- (void)hidePageSwitchView;
-- (void)showPageSwitchView;
-- (void)keyboardDidShowWithHeight:(CGFloat)keyboardHeight;
-- (void)keyboardWillHide;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -404,6 +333,7 @@ SWIFT_PROTOCOL("_TtP6H2HSDK16SocketEngineSpec_")
 - (void)write:(NSString * _Nonnull)msg withType:(enum SocketEnginePacketType)type withData:(NSArray<NSData *> * _Nonnull)data;
 @end
 
+@class NSURLSession;
 @class WebSocket;
 @class NSError;
 

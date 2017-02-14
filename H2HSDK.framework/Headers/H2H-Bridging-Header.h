@@ -50,4 +50,4 @@
 
 #import "BaseViewControllerPhone.h"
 
-#import "H2HSDKExt.h"
+//#import "H2HSDKExt.h"

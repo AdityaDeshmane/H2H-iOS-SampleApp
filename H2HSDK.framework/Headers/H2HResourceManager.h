@@ -80,12 +80,11 @@
 @property (nonatomic, assign) BOOL customRecordingEnabled;
 @property (nonatomic, assign) BOOL customLockUIEnabled;
 @property (nonatomic, assign) BOOL customHideInviteParticipant;
-
+@property (nonatomic, assign) BOOL customAllowUserToTurnOnAudioVideo;
 @property (nonatomic, assign) BOOL isAudioOnly;
 
 @property (strong, nonatomic) UIImage *customLogoImage;
 @property (strong, nonatomic) NSString *customLanguage;
-@property (nonatomic) Boolean customUseFabricJSWhiteboard;
 @property (nonatomic) Boolean customUseFabricJSWhiteboardMemoryOptimisation;
 @property (nonatomic) Boolean customUseAttendeeIdForWB;
 @property (nonatomic) Boolean customHideParticipantsIcon;
@@ -114,6 +113,7 @@
 
 - (void)showSuccessMessageWithText:(NSString *)text;
 - (void)showErrorMessageWithText:(NSString *)text;
-- (void)updateCustomParametersForMeetingType:(NSString*)meetingType;
-
+- (void)updateCustomParametersForMeetingType:(NSString*)meetingType andUserRole:(NSString *)userRole;
+// method to set default values for custom params according to meeting type and user role 
+- (void)setDefaultCustomParametersForMeetingType:(NSString*)meetingType andUserRole:(NSString *)userRole;
 @end

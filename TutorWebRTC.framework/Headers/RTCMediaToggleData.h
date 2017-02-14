@@ -53,6 +53,21 @@
  */
 @property (readonly) NSString *initiator;
 
+
+
+/**
+ *  The isAudioGranted represents the action required to taken on the media.
+ *  Mute or unmute the media stream.
+ */
+@property (readonly) BOOL isAudioGranted;
+
+/**
+ *  The isVideoGranted represents the action required to taken on the media.
+ *  Mute or unmute the media stream.
+ */
+@property (readonly) BOOL isVideoGranted;
+
+
 /**
  *  Gets the RTCMediaToggleData with the specified media type, action and user.
  *
@@ -109,4 +124,28 @@
                        andRole:(NSString *)role
                  andIsAttendee:(BOOL) isAttendee
                   andInitiator:(NSString *)initiator;
+
+
+/**
+ *  Gets the RTCMediaToggleData with the specified media type, action and user.
+ *
+ *  @param mediaType The media type MediaTypeAudio/MediaTypeVideo.
+ *
+ *  @param isEnabled The action to set enabled the MediaType TRUE/FALSE.
+ *
+ *  @param user The user for whom the media is to toggled.
+ *
+ *  @param isAudioGranted The audio permission of user for whom the media is to toggled.
+ *
+ *  @param isVideoGranted The video permission of user for whom the media is to toggled.
+ *
+ *  @return The instance of RTCMediaToggleData. Else returns @p nil.
+ */
+- (instancetype) initWithMedia: (MediaType)mediaType
+                     andAction: (BOOL) isEnabled
+                       andUser: (NSString *)user
+                andToggleState: (ToggleState) toggleState
+             andIsAudioGranted: (BOOL) isAudioGranted
+             andIsVideoGranted: (BOOL) isVideoGranted;
+
 @end

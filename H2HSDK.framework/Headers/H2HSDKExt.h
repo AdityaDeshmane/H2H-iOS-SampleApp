@@ -11,7 +11,6 @@
 #import "H2HLoadingView.h"
 #import "H2HUserActionManager.h"
 #import "H2HLaunchParameterWebService.h"
-#import "H2HContainerManager.h"
 #import "H2HChatViewController.h"
 
 #define SYSTEM_VERSION_EQUAL_TO(v) \

@@ -19,6 +19,8 @@
 #import "RTCMediaToggleData.h"
 #import "RTCMediaConstraint.h"
 
+#import "RTCRoom.h"//Aditya: Moved here from RTCMulticastSessionManager.h
+
 typedef enum : NSUInteger {
     RTCSessionManagerCameraOrientationPortrait = 1,
     RTCSessionManagerCameraOrientationPortraitUpsideDown = 2,
@@ -137,6 +139,43 @@ typedef NS_ENUM(NSUInteger, MEETING_TYPE) {
  *
  *  @return An instance of RTCSessionManager or @p nil.
  */
+
+//Aditya: Moved here from RTCMulticastSessionManager.h
+
+/**
+ *  The state of joining the multicast room.
+ */
+@property (readonly, nonatomic) RTCMulticastRoomState multicastRoomState;
+
+/**
+ *  State of the multicast WebRTC session.
+ */
+@property (readonly, nonatomic) RTCMulticastState multicastState;
+
+/**
+ *  The room which is currently joined by the localUser. If no room is joined this will be @p nil.
+ */
+@property (readonly, strong) RTCRoom *room;
+
+/**
+ *  The attendee user in the current broadcast or webinar session whose audio/video is active.If no attendeeUser arrived it will be @p nil.
+ */
+@property (readwrite, strong) RTCUser *attendeeUser;
+/**
+ *  The mediaDataForBroadcast is RTCMediaToggleData that is received from server for attendee for broadcast meeting type.
+ */
+@property (readwrite, strong) RTCMediaToggleData *mediaDataForBroadcast;
+
+/**
+ *  The mediaDataForWebinar is RTCMediaToggleData that is received from server for attendee for webinar meeting type.
+ */
+@property (readwrite, strong) RTCMediaToggleData *mediaDataForWebinar;
+
+@property (nonatomic, copy) NSString* connectionCheckStr;
+
+//Aditya: End of moved items
+
+
 - (instancetype _Nonnull)initWithServerURL: (NSURL *_Nonnull)serverURL
                                 retryDelay: (NSUInteger)retryDelay
                    andMaximumRetryAttempts: (NSUInteger)maximumRetryAttempts;
@@ -243,4 +282,19 @@ andIsChangesForLocalUser: (BOOL) isChangesForLocalUser
  *  Request for test connection.
  */
 -(void)testConnection;
+/**
+ *  Request notify server transcript toggle
+ */
+- (void) notifyServerTranscriptSettingsToggle:(BOOL)action
+                         withSubtitleLanguage:(NSString *_Nonnull)subtitleLanguage
+                           andSpokenLanaguage:(NSString *_Nonnull)spokenLanguage;
+/**
+ *  Request notify server Spoken Language Change
+ */
+-(void) notifySpokenLanguageChange:(NSString *_Nonnull)spokenLanguage;
+
+/**
+ *  Request notify server subtitle Language Change
+ */
+-(void) notifySubtitleLanguageChange:(NSString *_Nonnull)subtitleLanguage;
 @end

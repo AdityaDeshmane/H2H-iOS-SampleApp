@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "H2HContainer.h"
 #import "H2HLaunchParameters.h"
 #import "H2HInitializeChatModel.h"
 #import "TutorWebRTC/RTCMulticastSessionManager.h"
@@ -53,6 +52,9 @@ typedef NS_ENUM (NSInteger, RecordingState) {
 @property (nonatomic, strong) H2HInitializeChatModel* initializeChatModel;
 
 @property (strong)H2HNewParticipantsManager* participantManager;
+
+// initial settings for audio video received in launch params ws 
+@property (nonatomic, strong) NSDictionary *receivedAudioVideoInitialSettings;
 
 //raise hand permission will be updated if host changes permission
 @property (nonatomic,readwrite) BOOL isHandRaiseEnabled;
@@ -109,27 +111,6 @@ typedef NS_ENUM (NSInteger, RecordingState) {
  */
 -(void) toggleMediaDenied:(RTCMediaToggleData *)mediaData;
 
-/*!
- * @discussion Adds a new tile to existing layout.
- * @param type is the type of tile that needs to be added.
- * @param object iss any specific data that might be required by tile for it's initialization.
- */
--(void) addTileWithType:(CONTAINER_TYPE)type andObject:(NSObject*)object;
-
-/*!
- * @discussion <#description#>
- * @param <#param description#>
- * @return <#return description#>
- */
--(void) pickImageFromCamera;
-
-/*!
- * @discussion <#description#>
- * @param <#param description#>
- * @return <#return description#>
- */
--(void) pickImage;
-
 #pragma MenuOptions Interactions
 /*!
  * @discussion Shows option for searching.
@@ -167,11 +148,6 @@ typedef NS_ENUM (NSInteger, RecordingState) {
  * @discussion Ends the current session, navigates to "Join the meeting" scene.
  */
 -(void) optionEndSessionTappedWithReason:(NSString*)reason;
-
-/*!
- * @discussion Resets all the tiles to their original layout.
- */
--(void) resetTilesTapped;
 
 -(void) setChatBadgeIconVisibility:(BOOL)shouldShow;
 
@@ -224,4 +200,17 @@ typedef NS_ENUM (NSInteger, RecordingState) {
  * @discussion displays confirmation alert to user when enable/unmute media request is received.
  */
 - (void) showConfirmationAlertForToggleMedia:(RTCMediaToggleData *)mediaData;
+
+/*!
+ * @discussion updates the joinRoom parameters with updated values for isAudioOnly and isAttendeeTurnVideoOnAllowed for sessionManager before joining room.
+ */
+- (void) updateJoinRoomParametersForSessionManager;
+/*!
+ * @discussion authorize camera access permission
+ */
+- (void) authorizeVideoStatus;
+/*!
+ * @discussion authorize microphone access permission
+ */
+- (void) authorizeAudioStatus;
 @end

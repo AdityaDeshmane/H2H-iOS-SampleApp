@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppConstants.h"
 
 @class H2HChatViewController;
 
