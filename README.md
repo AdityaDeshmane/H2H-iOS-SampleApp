@@ -37,7 +37,7 @@
 
 3. For frameworks and bundle make sure entries are present at two places 
 
-  Make sure files frome 1 and 2 are present here (Refer sample project for entries)
+  Make sure files from 1 and 2 are present here (Refer sample project for entries)
 
   * From Project File -> General -> Embedded Binaries 
   * From Project File -> General -> Linked Frameworks and Libraries
