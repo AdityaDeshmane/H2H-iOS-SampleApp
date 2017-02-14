@@ -16,6 +16,12 @@
 2. On launch, Xcode asks for migration of code, select Later.
 3. Set bundle ID and App signing 
 4. Set server URL in "AppDelegate.swift"
+5. Run Application
+6. This should run application without any error
+
+---
+### How to use SDK in your project?
+
 
 Step 1.
 
