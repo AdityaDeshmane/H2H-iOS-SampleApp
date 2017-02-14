@@ -374,15 +374,21 @@ class ScheduleMeetingTableViewController : UITableViewController, SelectedString
         
         self.requestWithURL(urlString, params: params as! Dictionary<String, AnyObject>, action: "scheduleMeeting", completionHandler: { (responseAnyObject, responseUrl, error) in
             
-            let responseDictionary = responseAnyObject as! NSDictionary
-            if responseDictionary["returnCode"] as? Int != 0
-            {
-                GUIUtility.sharedInstance.dismissLoadingAndDisplayAlertWith( "Error: Scheduling meeting",
-                    message: (responseDictionary["message"] as? String)!)
+            if responseAnyObject != nil {
+                let responseDictionary = responseAnyObject as! NSDictionary
+                if responseDictionary["returnCode"] as? Int != 0
+                {
+                    GUIUtility.sharedInstance.dismissLoadingAndDisplayAlertWith( "Error: Scheduling meeting",
+                        message: (responseDictionary["message"] as? String)!)
+                }
+                else
+                {
+                    completionHandler(responseDictionary, responseUrl, error)
+                }
             }
-            else
-            {
-                completionHandler(responseDictionary, responseUrl, error)
+            else {
+                GUIUtility.sharedInstance.dismissLoadingAndDisplayAlertWith( "Error: Empty Response",
+                    message: "No response received.")
             }
         })
     }
