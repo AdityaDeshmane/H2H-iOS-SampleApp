@@ -22,18 +22,20 @@
 ---
 ### How to use SDK in your project?
 
-
-Step 1.
-
-  In your project’s folder copy below files. You can find these files in the FrameworksAndResources folder.
+1. Copy (drag drop) following frameworks and bundle from sample app's FrameworksAndResources folder to your project
 
   H2HBundle.bundle
-
   TutorWebTC.framework
-
   H2HSDK.framework
 
-Step 2.
+2. Copy (drag drop) following third party framework from sample app to your project directory
+
+  Charts.framework
+  CocoaAsyncSocket.framework
+  CocoaLumberjack.framework
+  XMPPFramework.framework
+
+3. For frameworks and bundle
 
   From Project File -> General -> Embedded Binaries -> + -> Add Other (select these files: H2HBundle.bundle, TutorWebTC.framework, H2HSDK.framework from the project directory.) -> Select: copy items if needed -> Finish.
   Make sure these files are added under:
