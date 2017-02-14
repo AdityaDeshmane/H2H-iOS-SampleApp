@@ -37,25 +37,18 @@
 
 3. For frameworks and bundle make sure entries are present at two places 
 
-  From Project File -> General -> Embedded Binaries 
+  Make sure files frome 1 and 2 are present here (Refer sample project for entries)
+
+  * From Project File -> General -> Embedded Binaries 
+  * From Project File -> General -> Linked Frameworks and Libraries
   
-  Make sure files frome 1 and 2 are present here
-
-  From Project File -> General -> Linked Frameworks and Libraries
-  
-  Make sure files frome 1 and 2 are present here
-
-
-
-
-
-
+4. Refer existing code from sample app to join meeting
 
 
 Meeting Room Customization:
 
 Please use parameter "customizationDictionary" from H2H SDK's joinMeetingWithToken method to customize the meeting room. Here is the example of customization dictionary:
-
+```
 NSDictionary *customizationDictionary = @{kCustomizationHideTranscript:@YES,
                                           kCustomizationHideTranslator:@YES,
                                                 kCustomizationLanguage:kCustomLanguageChinese,
@@ -74,3 +67,4 @@ kCustomizationUseFabricJSWhiteboard - BOOL - use native or Farbic.js whiteboard;
 kCustomizationUseAttendeeIdForWB - BOOL - whiteboard control flag;
 kCustomizationHideInviteUsersByEmail - BOOL - enable/disable UI for inviting participants to the meeting;
 kCustomizationHideParticipantsIcon - BOOL - enable/disable participants management.
+```
