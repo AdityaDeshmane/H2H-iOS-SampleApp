@@ -7,7 +7,7 @@
 * Use Xcode 8 onwards
 * Not compatible with simulater, use iPhone/iPad only
 * Minimum compatible iOS 9.3
-* Sample app is using Swift and module name is "H2HSDKIntegrationSample" use this module name if you want to use code in obj -c
+* Sample app is using Swift and module name is "H2HSDKIntegrationSample", import H2HSDKIntegrationSample-Swift.h in obj-c code if your code base is in obj-c.
 
 ---
 ### How to run sample app ?
