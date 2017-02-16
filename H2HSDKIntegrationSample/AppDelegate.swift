@@ -10,14 +10,21 @@ import UIKit
 import H2HSDK
 
 // server base URL
+
+//let H2HServerURL = "https://52.9.33.98/tutormeetweb/"//ec2-52-9-33-98.us-west-1.compute.amazonaws.com
+//let H2HServerURL = "https://ec2-52-9-33-98.us-west-1.compute.amazonaws.com/tutormeetweb/"
 let H2HServerURL = "https://sandbox.liveh2h.com/tutormeetweb/"
 
+
+extension NSURLRequest
+{
+
+}
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, NSURLSessionDelegate {
 
     var window: UIWindow?
-
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -26,6 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NSURLSessionDelegate {
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
         
+        //NSURLRequest.setAllowsAnyHTTPSCertificate(true, forHost: "52.9.33.98")
+
         return true
     }
 

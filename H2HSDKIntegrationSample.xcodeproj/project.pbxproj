@@ -107,6 +107,7 @@
 		D0521BF01E3B733B00377C9D /* CocoaLumberjack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CocoaLumberjack.framework; sourceTree = "<group>"; };
 		D0521BF11E3B733B00377C9D /* XMPPFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = XMPPFramework.framework; sourceTree = "<group>"; };
 		D079A3A41E3B2E200046D605 /* H2HSDKIntegrationSample-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "H2HSDKIntegrationSample-Bridging-Header.h"; sourceTree = "<group>"; };
+		D0F4BA8A1E55CAF8001DCEA3 /* NSURLRequest+PrivateExposed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+PrivateExposed.h"; sourceTree = "<group>"; };
 		DE56409A1DAB662E8CAB2FA8 /* Pods-H2HSDKIntegrationSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-H2HSDKIntegrationSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-H2HSDKIntegrationSample/Pods-H2HSDKIntegrationSample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -211,6 +212,7 @@
 				57344AD21D408599006E2D61 /* Storyboards */,
 				57344AD31D408599006E2D61 /* ViewControllers */,
 				5740B7E61D3F60B000DB011C /* AppDelegate.swift */,
+				D0F4BA8A1E55CAF8001DCEA3 /* NSURLRequest+PrivateExposed.h */,
 				5740B7ED1D3F60B000DB011C /* Assets.xcassets */,
 				5740B7F21D3F60B000DB011C /* Info.plist */,
 			);

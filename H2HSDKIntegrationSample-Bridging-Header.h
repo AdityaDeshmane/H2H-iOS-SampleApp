@@ -3,3 +3,5 @@
 //
 
 #import <H2HSDK/H2HSDKExt.h>
+
+#import "NSURLRequest+PrivateExposed.h"
