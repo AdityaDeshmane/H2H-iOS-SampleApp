@@ -7,7 +7,7 @@
 * Use Xcode 8 onwards
 * Not compatible with simulater, use iPhone/iPad only
 * Minimum compatible iOS 9.3
-* Sample app is using Swift and module name is "H2HSDKIntegrationSample", import H2HSDKIntegrationSample-Swift.h in obj-c code if your code base is in obj-c.
+* Sample app is using Swift and module name is ```"H2HSDKIntegrationSample"```, ```import H2HSDKIntegrationSample-Swift.h``` in obj-c code if your code base is in obj-c.
 
 ---
 ### How to run sample app ?
@@ -15,7 +15,7 @@
 1. Open workspace H2HSDKIntegrationSample.xcworkspace
 2. On launch, Xcode asks for migration of code, select Later.
 3. Set bundle ID and App signing 
-4. Set server URL in "AppDelegate.swift" ```let H2HServerURL = "https://sandbox.liveh2h.com/tutormeetweb/" ```
+4. Set server URL in ```"AppDelegate.swift"```  ```let H2HServerURL = "https://sandbox.liveh2h.com/tutormeetweb/" ```
 5. Run Application
 6. This should run application without any error
 
@@ -24,23 +24,23 @@
 
 1. Copy (drag drop) following frameworks and bundle from sample app's FrameworksAndResources folder to your project
 
- * H2HBundle.bundle
- * TutorWebTC.framework
- * H2HSDK.framework
+ * ```H2HBundle.bundle```
+ * ```TutorWebTC.framework```
+ * ```H2HSDK.framework```
 
 2. Copy (drag drop) following third party framework from sample app to your project directory
 
- * Charts.framework
- * CocoaAsyncSocket.framework
- * CocoaLumberjack.framework
- * XMPPFramework.framework
+ * ```Charts.framework```
+ * ```CocoaAsyncSocket.framework```
+ * ```CocoaLumberjack.framework```
+ * ```XMPPFramework.framework```
 
 3. For frameworks and bundle make sure entries are present at two places 
 
   Make sure files from 1 and 2 are present here (Refer sample project for entries)
 
-  * From Project File -> General -> Embedded Binaries 
-  * From Project File -> General -> Linked Frameworks and Libraries
+  * From Project File -> ```General``` -> ```Embedded Binaries```
+  * From Project File -> ```General``` -> ```Linked Frameworks and Libraries```
   
 4. Refer existing code from sample app to join meeting
 
