@@ -48,9 +48,9 @@
 * ```ScheduleMeetingTableViewController.swift``` - To schedule meeting
 * ```StartMeetingTableViewController.swift``` - To start instant meeting
 
-Check all available API's for meeting joining in framework header file H2HSDK.h at following path
+Check all available API's for meeting joining in framework header file ```H2HSDK.h``` at following path
 
-H2HSDK.framework -> Headers -> H2HSDK.h
+```H2HSDK.framework -> Headers -> H2HSDK.h```
 
 Meeting Room Customization:
 
