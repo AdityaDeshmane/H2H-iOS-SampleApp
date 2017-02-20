@@ -44,6 +44,9 @@
   
 4. Refer existing code from sample app to join meeting
 
+Check available API's for meeting joining in framework header file H2HSDK.h 
+
+H2HSDK.framework -> Headers -> H2HSDK.h
 
 Meeting Room Customization:
 
