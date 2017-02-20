@@ -44,9 +44,9 @@
   
 4. Refer existing code from sample app to join meeting
 
-* JoinMeetingTableViewController.swift - To Join meeting
-* ScheduleMeetingTableViewController.swift - To schedule meeting
-* StartMeetingTableViewController.swift - To start instant meeting
+* ```JoinMeetingTableViewController.swift``` - To Join meeting
+* ```ScheduleMeetingTableViewController.swift``` - To schedule meeting
+* ```StartMeetingTableViewController.swift``` - To start instant meeting
 
 Check all available API's for meeting joining in framework header file H2HSDK.h at following path
 
