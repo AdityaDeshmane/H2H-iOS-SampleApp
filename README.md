@@ -44,13 +44,17 @@
   
 4. Refer existing code from sample app to join meeting
 
-Check available API's for meeting joining in framework header file H2HSDK.h 
+* JoinMeetingTableViewController.swift - To Join meeting
+* ScheduleMeetingTableViewController.swift - To schedule meeting
+* StartMeetingTableViewController.swift - To start instant meeting
+
+Check all available API's for meeting joining in framework header file H2HSDK.h at following path
 
 H2HSDK.framework -> Headers -> H2HSDK.h
 
 Meeting Room Customization:
 
-Please use parameter "customizationDictionary" from H2H SDK's joinMeetingWithToken method to customize the meeting room. Here is the example of customization dictionary:
+Use parameter "customizationDictionary" from H2H SDK's joinMeetingWithToken method to customize the meeting room. Here is the example of customization dictionary:
 ```
 NSDictionary *customizationDictionary = @{kCustomizationHideTranscript:@YES,
                                           kCustomizationHideTranslator:@YES,
